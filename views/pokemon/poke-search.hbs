@@ -1,0 +1,17 @@
+<div>
+
+  <h3>Resultado de busqueda</h3>
+
+  {{#if this.onePokemon}}
+
+    <div>
+      <h4>{{this.onePokemon.name}}</h4>
+      <img src="{{this.onePokemon.url}}" alt="pokemon" height="200px">
+    </div>
+  {{else}}
+
+    <h3>No se encontraron pokemon con ese nombre :(</h3>
+
+  {{/if}}
+
+</div>

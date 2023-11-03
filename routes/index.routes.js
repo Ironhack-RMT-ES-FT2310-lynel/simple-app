@@ -49,6 +49,23 @@ router.get("/pokemon/:pokemonId", async (req, res, next) => {
 })
 
 // GET "/pokemon-search" => para buscar pokemons por un campo de busqueda
+router.get("/pokemon-search", async (req, res, next) => {
+
+  try {
+    // tiene que recibir el valor que escribe el usuario en el formulario
+    console.log(req.query)
+    const response = await Pokemon.findOne({ name: req.query.pokemonName })
+    console.log(response)
+  
+    res.render("pokemon/poke-search.hbs", {
+      onePokemon: response
+    })
+    
+  } catch (error) {
+    next(error)
+  }
+
+})
 
 
 module.exports = router;

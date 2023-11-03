@@ -11,6 +11,21 @@
 
    <body>
 
+      <nav>
+         <a href="/">Home</a>
+         <a href="/pokemon">Lista pokemons</a>
+
+         {{!-- form tiene propiedades especiales action y method que indica a donde el usuario va a enviar esa llamada (request) --}}
+         <form action="/pokemon-search" method="get">
+
+            <label for="">Nombre de Pokemon</label>
+            <input type="text" name="pokemonName">
+            <button>Buscar</button>
+
+         </form>
+
+      </nav>
+
       {{{body}}}
 
       <script src="/js/script.js"></script>
